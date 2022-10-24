@@ -1,4 +1,4 @@
-#CSYE6225 Workspace
+#CSYE6225
 
 # Assignment-4
 Pre-requisites:
@@ -7,14 +7,13 @@ Pre-requisites:
 Getting Started:
 
 ##Clone the repository
+ Install Dependencies
 
-Install Dependencies
+  cd webservice
+  npm install
+  Build and run the project
 
-cd webservice
-npm install
-Build and run the project
-
-npm start
+  npm start
 ##Testing:
 
 The test case is written using Mocha and Supertest -
