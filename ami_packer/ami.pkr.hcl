@@ -11,7 +11,6 @@ variable "source_ami" {
 
 variable "ssh_username" {
     type    = string
-    default = "ubuntu"
 }
 
 source "amazon-ebs" "my-ami" { 
