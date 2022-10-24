@@ -41,8 +41,8 @@ build {
     ]
 
     provisioner "file" {
-        source = "./webappDEV.zip"
-        destination = "/home/${var.ssh_username}/webappDEV.zip"
+        source = "./WebAppDEV.zip"
+        destination = "/home/${var.ssh_username}/WebAppDEV.zip"
     }
 
     provisioner "file" {
