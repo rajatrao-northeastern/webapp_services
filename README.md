@@ -1,12 +1,12 @@
-CSYE6225 Workspace
+#CSYE6225 Workspace
 
-Assignment-4
+# Assignment-4
 Pre-requisites:
 
-Install Node.js
+##Install Node.js
 Getting Started:
 
-Clone the repository
+##Clone the repository
 
 Install Dependencies
 
@@ -15,7 +15,7 @@ npm install
 Build and run the project
 
 npm start
-Testing:
+##Testing:
 
 The test case is written using Mocha and Supertest -
 
