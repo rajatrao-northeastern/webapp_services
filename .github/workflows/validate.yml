@@ -1,7 +1,6 @@
 name: Validate
 on:
   push:
-  workflow_dispatch:
 jobs:
     validate-packer:
         runs-on: ubuntu-latest
