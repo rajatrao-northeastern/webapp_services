@@ -1,0 +1,19 @@
+[Unit]
+Description= NodeJs WebApp
+After=cloud-final.service
+
+
+[Service]
+WorkingDirectory=/home/${var.ssh_username}/webappDEV
+ExecStart=/usr/bin/node /home/${var.ssh_username}/webappDEV/index.js
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=Webapp
+User=${var.ssh_username}
+
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=cloud-init.target
