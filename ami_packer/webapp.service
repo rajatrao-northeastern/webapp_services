@@ -4,8 +4,8 @@ After=cloud-final.service
 
 
 [Service]
-WorkingDirectory=/home/${var.ssh_username}/webappDEV
-ExecStart=/usr/bin/node /home/${var.ssh_username}/webappDEV/index.js
+WorkingDirectory=/home/${var.ssh_username}/WebAppDEV
+ExecStart=/usr/bin/node /home/${var.ssh_username}/WebAppDEV/index.js
 Restart=always
 RestartSec=10
 StandardOutput=syslog
