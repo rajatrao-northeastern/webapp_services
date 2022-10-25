@@ -14,6 +14,11 @@ variable "ssh_username" {
     default = "ubuntu"
 }
 
+variable "subnet_id"{
+    type = string
+    default = "subnet-0f4b1cf1c746d4511"
+}
+
 source "amazon-ebs" "my-ami" { 
     region = "${var.aws_region}"
     ami_name = "csye6225_${formatdate("YYYY_MM_DD_hh_mm_ss", timestamp())}"
@@ -26,7 +31,8 @@ source "amazon-ebs" "my-ami" {
     ami_users = [ "838931846632" ]
     source_ami = "${var.source_ami}"
     ssh_username = "${var.ssh_username}"
-
+    subnet_id = "${var.subnet_id}"
+  
     launch_block_device_mappings {
         delete_on_termination = true
         device_name           = "/dev/sda1"
