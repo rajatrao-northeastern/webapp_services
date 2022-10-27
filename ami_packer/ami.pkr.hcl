@@ -14,11 +14,6 @@ variable "ssh_username" {
     default = "ubuntu"
 }
 
-variable "subnet_id"{
-    type = string
-    default = "subnet-0ade119d53f05c52e"
-}
-
 source "amazon-ebs" "my-ami" { 
     region = "${var.aws_region}"
     ami_name = "csye6225_${formatdate("YYYY_MM_DD_hh_mm_ss", timestamp())}"
