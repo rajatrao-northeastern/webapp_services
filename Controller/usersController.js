@@ -6,8 +6,8 @@ const {v4:uuidv4} = require('uuid');
 // Create a User
 
 async function createUser (req, res, next) {
-   // const salt = await bcrypt.genSalt(10);
-    var hash = await bcrypt.hash(req.body.password, 10);
+   const salt = bcrypt.genSaltSync(10);
+    var hash = await bcrypt.hash(req.body.password, salt);
     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     if(!emailRegex.test(req.body.username)) {
         res.status(400).send({
@@ -85,7 +85,7 @@ async function updateUser(req, res, next) {
     User.update({
         first_name: req.body.first_name,
         last_name: req.body.last_name,
-        password: await bcrypt.hash(req.body.password, 10)
+        password: await bcrypt.hash(req.body.password, salt)
     }, {where : {username: req.user.username}}).then((result) => {
         if (result == 1) {
             res.sendStatus(204);

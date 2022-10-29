@@ -2,7 +2,7 @@ const express = require('express');
 const router = require('./routes/router.js');
 const bodyParser = require('body-parser');
 const db = require("./config/sequelizeDB.js");
-//const baseAuthentication = require('./util/auth.js');
+const baseAuthentication = require('./util/auth.js');
 
 const app = express();
 app.use(express.json());
@@ -26,6 +26,6 @@ const port = process.env.PORT || 3000;
 
 module.exports = app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-});;
+});
 
 module.exports = app;
