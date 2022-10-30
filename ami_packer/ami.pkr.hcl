@@ -1,4 +1,3 @@
-
 variable "aws_region" {
   type    = string
   default = "us-east-1"
@@ -20,16 +19,15 @@ source "amazon-ebs" "my-ami" {
     ami_description = "AMI for CSYE 6225"
     ami_regions = [
         "us-east-1",
-    ]
-    
+    ] 
     instance_type = "t2.micro"
     ami_users = [ "838931846632" ]
     source_ami = "${var.source_ami}"
     ssh_username = "${var.ssh_username}"
-  
+
     launch_block_device_mappings {
         delete_on_termination = true
-        device_name           = "/dev/xvda"
+        device_name           = "/dev/sda1"
         volume_size           = 50
         volume_type           = "gp2"
     }
@@ -39,19 +37,16 @@ build {
     sources = [ 
         "source.amazon-ebs.my-ami"
     ]
-
+    
     provisioner "file" {
-        source = "./WebAppDEV.zip"
-        destination = "/home/${var.ssh_username}/WebAppDEV.zip"
+        source = "./webappDEV.zip"
+        destination = "/home/${var.ssh_username}/webappDEV.zip"
     }
-
     provisioner "file" {
         source = "./webapp.service"
         destination = "/tmp/webapp.service"
     }
-
     provisioner "shell" {
         script = "./setup.sh"
     }
-
 }

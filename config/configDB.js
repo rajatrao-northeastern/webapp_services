@@ -4,7 +4,7 @@ const config = {
     db: {
         host: env.DB_HOST || 'localhost',
         user: env.DB_USER || 'root',
-        password: env.DB_PASSWORD ||'Rajat@0594',
+        password: env.DB_PASSWORD ||'Rajatrao0594',
         database: env.DB_NAME || 'usersDB',
         dialect: "mysql",
         port:3306,
