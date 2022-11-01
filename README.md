@@ -1,6 +1,6 @@
 #CSYE6225
 
-# Assignment-4
+# Assignment-5
 Pre-requisites:
 
 ##Install Node.js
@@ -22,4 +22,6 @@ The test case is written using Mocha and Supertest -
 "supertest": "^6.2.2"
 Running tests using NPM Scripts
 
-npm run test
+#Developed by Rajat Rao
+
+Rao.rajat@northeastern.edu
